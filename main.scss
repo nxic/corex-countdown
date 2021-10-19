@@ -1,0 +1,81 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+  user-select: none;
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.wrapper {
+	background-color: #efefef;
+	color: #333;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+
+  & > h1 {
+    font-size: 2rem;
+    font-weight: normal;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  & > img {
+    max-width: 100%;
+    margin-bottom: 3rem;
+    pointer-events: none;
+  }
+
+  & > .countdown {
+    font-size: 2rem;
+
+    & > ul {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      & > li {
+        padding: 1rem;
+        display: block;
+        list-style-type: none;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        text-align: right;
+
+        & > span {
+          display: block;
+          font-size: 4.5rem;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 620px) {
+  .wrapper {
+    padding: 0 1rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .wrapper > h1 { font-size: 1rem; }
+  .wrapper > .countdown > ul { flex-flow: column nowrap; }
+  .wrapper > .countdown > ul > li { font-size: 1rem; padding: 0; }
+  .wrapper > .countdown > ul > li > span { font-size: 4rem; padding: 0; }
+  .wrapper > .countdown > ul > span { font-size: 1.25rem; padding: 0; }
+}
+
+
+@media screen and (max-width: 340px) {
+  .wrapper > .countdown > ul > li > span { font-size: 3rem; padding: 0; }
+}
